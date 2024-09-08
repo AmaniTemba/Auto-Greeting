@@ -1,1 +1,37 @@
-Hello Word
+<script>
+  function dynamicGreeting() {
+    var now = new Date();
+    var hours = now.getHours();
+    var greeting;
+
+    if (hours < 12) {
+      greeting = "Good Morning, ";
+    } else if (hours < 18) {
+      greeting = "Good Afternoon, ";
+    } else {
+      greeting = "Good Evening, ";
+    }
+
+    // Directly use the name here
+    var username = "YourName"; // Replace "YourName" with the desired name
+
+    // Apply styles directly to the username
+    var styledUsername = '<span style="color: #273067; font-family: Lato, sans-serif; font-size: 26px; font-weight: 600;">' + username + '</span>';
+
+    // Insert the greeting with the styled username
+    document.getElementById("dynamic-greeting").innerHTML = greeting + styledUsername + "!";
+  }
+
+  window.onload = dynamicGreeting;
+</script>
+
+<style>
+  #dynamic-greeting {
+    color: #273067;
+    font-family: 'Lato', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+  }
+</style>
+
+<div id="dynamic-greeting"></div>
